@@ -4,7 +4,6 @@
   "description": "A program that translates the directions passed in the command line into instructions that are understood by the Rover.",
   "main": "app.js",
   "scripts": {
-    "start": "node ./src/app.js",
     "test": "mocha"
   },
   "repository": {
