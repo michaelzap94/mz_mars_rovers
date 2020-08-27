@@ -118,10 +118,10 @@ describe('You are given a sequence of commands that will make a Rover move out o
         const controller = new Controller();
         controller.createPlateau("5 5");
 
-        const rover = controller.createRover("5 5 N");
-        const roverFinalPosition = controller.moveRoverSpecific(rover, "MMMMMMM");
+        const rover = controller.createRover("5 5 E");
+        const roverFinalPosition = controller.moveRoverSpecific(rover, "M");
 
-        assert.equal(roverFinalPosition, "5 5 N");
+        assert.equal(roverFinalPosition, "5 5 E");
     });
 
 });
