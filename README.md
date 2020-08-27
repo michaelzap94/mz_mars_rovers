@@ -1,6 +1,7 @@
 # MZ Mars Rovers
 
 This project is my JavaScript implementation of the Mars Rovers coding challenge for Nando's, using Node.js as the engine behind it.
+You can check the documentation here: https://michaelzap94.github.io/mz_mars_rovers/
 
 ***
 
