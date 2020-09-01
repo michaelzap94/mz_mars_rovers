@@ -110,6 +110,12 @@ describe('You are given a sequence of commands that a specific Rover must follow
         assert.equal(rover5FinalPosition, "4 4 S");
     });
 
+    it('should return expected final position when input is provided in one go', () => {
+        const result = new Controller().oneGo(["5 5", "1 2 N", "LMLMLMLMM", "3 3 E", "MMRMMRMRRM", "0 0 S", "LLMMRMM", "1 1 E", "MRM", "5 5 W", "MLM"]);
+        
+        assert.deepEqual(result, ["1 3 N", "5 1 E", "2 2 E", "2 0 S", "4 4 S"]);
+    });
+
 });
 
 describe('You are given a sequence of commands that will make a Rover move out of the Plateau', () => {

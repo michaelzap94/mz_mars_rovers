@@ -97,7 +97,14 @@ $ npm install -d
 $ npm test
 ```
 
-The tests will give you a broader understanding of how this software was implemented.
+The tests will give you a broader understanding of how this software was implemented. You can find them in the "test" folder.
+
+Alternatively, you can also run a quick test, that will execute the code by providing the instructions in one go. You will see the results in the terminal. 
+(This test is also included in the test cases in the "test" folder, using more instructions).
+
+```sh
+$ npm start
+```
 
 ### Todos
 
