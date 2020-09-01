@@ -19,9 +19,11 @@ class Controller extends ControllerHelper{
     createPlateau(input){
         const convertedInput = this.convertPlateauInput(input);
         if (convertedInput === null) {
-            //console.log("Input is not valid");
+            console.log("Input to create Plateau is not valid");
+            return null;
         } else {
             this.plateau = new Plateau(convertedInput.x, convertedInput.y);
+            return this.plateau;
             //console.log("Done, Plateau has been created.");
         }
     }
@@ -64,7 +66,7 @@ class Controller extends ControllerHelper{
      * @param {string} input - Series of instructions telling the rover how to explore the plateau.
      */
     moveRoverSpecific(rover, input){
-        if(!this.checkInstructionsAreValid(input)){
+        if(!rover || !this.checkInstructionsAreValid(input)){
             //console.log("The instructions provided are not valid.");
             return null;
         } else {
@@ -122,7 +124,9 @@ class Controller extends ControllerHelper{
         let latestRover = null;
 
         //The first instruction will be used to create the Plateau ALWAYS, so we remove it and use it.
-        this.createPlateau(instructions.shift());
+        if(this.createPlateau(instructions.shift()) === null) {
+            return null;
+        }
 
         //now the EVEN elements will be intructions to create Rovers and the ODD elements to move them sequentially.
         for (let i = 0; i < instructions.length; i++) {
